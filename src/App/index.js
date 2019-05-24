@@ -27,15 +27,18 @@ class App extends React.Component {
       })
     }));
   }
-  handleInputChange(){
-    console.log('hola');
+  handleInputChange(event){
+    const inputValue = event.target.value;
+    console.log(inputValue);
     
+    this.setState({
+      inputValue: inputValue
+    })
   }
   render() {
-    console.log(this.state.inputValue);
     const { characters, inputValue } = this.state;
     return (
-      <div className="App">
+      <div className="App__container">
         <Switch>
           <Route exact path="/" render={routerProps=>(<HomePage match={routerProps.match} characters={characters} value={inputValue}
           handleInputChange={this.handleInputChange}/>)} />

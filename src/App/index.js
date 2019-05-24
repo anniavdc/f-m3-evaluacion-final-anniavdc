@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import "./styles.css";
 import HomePage from "../components/HomePage";
+import DetailsPage from "../components/DetailsPage"
 
 class App extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class App extends React.Component {
     this.state = {
       characters: [],
       inputValue: "",
+      loading: true,
     };
     this.handleInputChange=this.handleInputChange.bind(this)
   }
@@ -23,7 +25,10 @@ class App extends React.Component {
     .then(response => response.json()
     .then(data => {
       this.setState({
-        characters: data,
+        loading: false,
+        characters: data.map((person, index) => {
+          return {...person, id: index + 1}
+        }),
       })
     }));
   }
@@ -34,13 +39,19 @@ class App extends React.Component {
       inputValue: inputValue
     })
   }
+  // getCharacterId(id) {
+  //   const { characters } = this.state;
+  //   return characters.find(person => person.id === parseInt(id));
+  // }
   render() {
-    const { characters, inputValue } = this.state;
+    const { characters, inputValue, loading } = this.state;
     return (
       <div className="App__container">
         <Switch>
           <Route exact path="/" render={routerProps=>(<HomePage match={routerProps.match} characters={characters} value={inputValue}
           handleInputChange={this.handleInputChange}/>)} />
+          <Route path="/character/:id" render={routerProps=>(
+            <DetailsPage match={routerProps.match} characters={characters} loading={loading}/>)}/>
         </Switch>
       </div>
     );

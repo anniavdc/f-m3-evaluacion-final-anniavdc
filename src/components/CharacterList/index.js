@@ -9,9 +9,9 @@ function CharacterList(props) {
     <ul className="CharacterList__container">
       {characters
         .filter(person => person.name.includes(value))
-        .map((person, index) => (
-          <Link>
-            <li className="CharacterList__item" key={index}>
+        .map((person) => (
+          <Link to= {`/character/${person.id}`}>
+            <li className="CharacterList__item" key={person.id}>
               <CharacterCard
                 name={person.name}
                 imageSrc={person.image}

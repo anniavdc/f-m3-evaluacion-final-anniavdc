@@ -1,0 +1,20 @@
+.DetailsPage__container{
+    height: 400px;
+    width: 600px;
+    background-color: rgb(116, 0, 0);
+    border: 1px solid rgb(109, 109, 109);
+    color: white;
+    text-align: center;
+}
+.DetailsPage__image{
+    height: 400px;
+    width: 250px;
+    background-size: cover;
+    background-position-x: center;
+}
+.DetailsPage__title{
+    font-size: 20px;
+}
+.DetailsPage__content{
+    font-size: 15px;
+}

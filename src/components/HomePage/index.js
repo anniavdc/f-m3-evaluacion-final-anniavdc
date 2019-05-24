@@ -6,8 +6,12 @@ function Homepage(props) {
     return (
       <div className="Homepage__container">
         <h1 className="Homepage__title">Harry Potter Characters</h1>
-        <Filters value={props.value} handleInputChange={props.handleInputChange}/>
-        <CharacterList characters={props.characters}/>
+        <Filters 
+        value={props.value} 
+        handleInputChange={props.handleInputChange}/>
+        <CharacterList 
+        characters={props.characters}
+        value={props.value}/>
       </div>
     );
   }

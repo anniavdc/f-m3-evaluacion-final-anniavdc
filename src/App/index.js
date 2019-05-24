@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       characters: [],
-      inputValue: ""
+      inputValue: "",
     };
     this.handleInputChange=this.handleInputChange.bind(this)
   }
@@ -29,8 +29,7 @@ class App extends React.Component {
   }
   handleInputChange(event){
     const inputValue = event.target.value;
-    console.log(inputValue);
-    
+  
     this.setState({
       inputValue: inputValue
     })

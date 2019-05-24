@@ -1,0 +1,10 @@
+.CharacterList__container{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-rows: auto;
+   justify-items: center;
+   grid-gap: 15px;
+}
+.CharacterList__item{
+    list-style: none;
+}

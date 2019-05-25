@@ -1,19 +1,34 @@
 .DetailsPage__container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+.DetailsPage__card{
     height: 400px;
     width: 600px;
     background-color: rgb(116, 0, 0);
-    border: 1px solid rgb(109, 109, 109);
+    border: 1px solid rgb(51, 51, 51);
     color: white;
     text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    box-shadow: -9px 7px 25px 2px rgb(0, 0, 0);
 }
 .DetailsPage__image{
     height: 400px;
     width: 250px;
     background-size: cover;
     background-position-x: center;
+    margin-right: 15px;
+    
 }
 .DetailsPage__title{
-    font-size: 20px;
+    font-size: 40px;
 }
 .DetailsPage__content{
     font-size: 15px;

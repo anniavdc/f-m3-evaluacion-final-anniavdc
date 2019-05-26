@@ -10,7 +10,7 @@ function CharacterList(props) {
       {characters
         .filter(person => person.name.includes(value))
         .map((person) => (
-          <Link to= {`/character/${person.id}`}>
+          <Link to= {`/character/${person.id}`} className="CharacterList__link">
             <li className="CharacterList__item" key={person.id}>
               <CharacterCard
                 name={person.name}

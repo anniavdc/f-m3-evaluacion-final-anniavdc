@@ -1,0 +1,12 @@
+.Filters__container{
+    margin-bottom: 40px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.125rem;
+}
+.Filters__input-text{
+    padding: 5px 80px;
+    border: 1px solid rgb(116, 0, 0);
+}

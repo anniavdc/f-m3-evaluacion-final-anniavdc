@@ -14,7 +14,11 @@ function DetailsPage(props) {
   if (loading) {
     return <p>Loading...</p>;
   }
-  const status = person.alive ? " ALIVE" : <i class="fas fa-skull-crossbones"></i>;
+  const status = person.alive ? (
+    " ALIVE"
+  ) : (
+    <i class="fas fa-skull-crossbones" />
+  );
   const year =
     person.yearOfBirth === "" ? "" : `Year of birth: ${person.yearOfBirth}`;
   const house = person.house === "" ? "" : `House: ${person.house}`;
@@ -33,13 +37,15 @@ function DetailsPage(props) {
         <div>
           <h2 className="DetailsPage__title">{person.name}</h2>
           <div className="DetailsPage__content">
-          <p>{house}</p>
-          <p>{year}</p>
-          <p>{patronus}</p>
-          <p>Status: {status}</p>
+            <p>{house}</p>
+            <p>{year}</p>
+            <p>{patronus}</p>
+            <p>Status: {status}</p>
           </div>
           <Link to="/" className="DetailsPage__link">
-            <p><i class="fas fa-reply"></i> Back</p>
+            <p>
+              <i class="fas fa-reply" /> Back
+            </p>
           </Link>
         </div>
       </div>

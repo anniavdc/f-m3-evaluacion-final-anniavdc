@@ -34,15 +34,10 @@ class App extends React.Component {
   }
   handleInputChange(event){
     const inputValue = event.target.value;
-  
     this.setState({
       inputValue: inputValue
     })
   }
-  // getCharacterId(id) {
-  //   const { characters } = this.state;
-  //   return characters.find(person => person.id === parseInt(id));
-  // }
   render() {
     const { characters, inputValue, loading } = this.state;
     return (

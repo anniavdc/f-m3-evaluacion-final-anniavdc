@@ -8,7 +8,7 @@ function CharacterList(props) {
   return (
     <ul className="CharacterList__container">
       {characters
-        .filter(person => person.name.includes(value))
+        .filter(person => person.name.toLowerCase().includes(value.toLowerCase()))
         .map((person) => (
           <Link to= {`/character/${person.id}`} className="CharacterList__link">
             <li className="CharacterList__item" key={person.id}>

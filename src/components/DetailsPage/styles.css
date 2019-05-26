@@ -31,5 +31,14 @@
     font-size: 40px;
 }
 .DetailsPage__content{
-    font-size: 15px;
+    font-size: 18px;
+    text-align: left;
+}
+.DetailsPage__link{
+    text-decoration: none;
+    color: rgb(163, 163, 163);
+    font-size: 20px;
+    position: absolute;
+    top: 310px;
+    left: 500px;
 }

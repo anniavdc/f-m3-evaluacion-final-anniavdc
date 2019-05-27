@@ -3,8 +3,8 @@
 .Homepage__container{
     background-size: cover;
     background-position-x: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+    background-repeat: repeat-y;
+    min-height: 100vh;
 }
 .Homepage__title{
     margin: 0;

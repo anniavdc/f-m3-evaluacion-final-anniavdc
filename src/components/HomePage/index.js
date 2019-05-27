@@ -1,7 +1,8 @@
 import React from 'react';
-import "./styles.css"
+import "./styles.scss"
 import Filters from '../Filters';
 import CharacterList from '../CharacterList';
+import PropTypes from "prop-types";
 
 function Homepage(props) {
     return (
@@ -16,5 +17,11 @@ function Homepage(props) {
       </div>
     );
   }
+
+  Homepage.propTypes = {
+    value: PropTypes.string,
+    characters: PropTypes.arrayOf(PropTypes.object),
+    handleInputChange: PropTypes.func,
+  };
   
   export default Homepage;

@@ -1,6 +1,8 @@
+@import "../../stylesheets/core/variables";
+
 .Filters__container{
     margin-bottom: 40px;
-    color: black;
+    color: $color-primary-1000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,5 +10,5 @@
 }
 .Filters__input-text{
     padding: 5px 80px;
-    border: 1px solid rgb(116, 0, 0);
+    border: 1px solid $color-secondary-600;
 }

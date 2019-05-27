@@ -1,10 +1,12 @@
+@import "../../stylesheets/core/variables";
+
 .Homepage__container{
-    background-color: beige;
+    background-color: $color-secondary-200;
 }
 .Homepage__title{
     margin: 0;
     padding: 40px;
     text-align: center;
     font-size: 3.125rem;
-    color: black;
+    color: $color-primary-1000;
 }

@@ -1,9 +1,11 @@
+@import "../../stylesheets/core/variables";
+
 .CharacterCard__container{
     height: 400px;
     width: 250px;
-    background-color: rgb(116, 0, 0);
-    border: 1px solid rgb(109, 109, 109);
-    color: white;
+    background-color: $color-secondary-600;
+    border: 1px solid $color-primary-600;
+    color: $color-primary-0;
     text-align: center;
 }
 .CharacterCard__image{

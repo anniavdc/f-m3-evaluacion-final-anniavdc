@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import howarts from "../../images/howarts.png";
-import "./styles.css";
+import "./styles.scss";
 
 function DetailsPage(props) {
   const { characters, loading } = props;

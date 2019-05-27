@@ -1,7 +1,7 @@
 import React from "react";
 import CharacterCard from "../CharacterCard";
 import { Link } from "react-router-dom";
-import "./styles.css";
+import "./styles.scss";
 
 function CharacterList(props) {
   const { characters, value } = props;
@@ -10,8 +10,8 @@ function CharacterList(props) {
       {characters
         .filter(person => person.name.toLowerCase().includes(value.toLowerCase()))
         .map((person) => (
-          <Link to= {`/character/${person.id}`} className="CharacterList__link">
-            <li className="CharacterList__item" key={person.id}>
+          <Link to= {`/character/${person.id}`} className="CharacterList__link" key={person.id}>
+            <li className="CharacterList__item">
               <CharacterCard
                 name={person.name}
                 imageSrc={person.image}

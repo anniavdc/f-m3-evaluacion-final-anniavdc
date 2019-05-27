@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./styles.scss";
 
 function CharacterCard(props) {
     const { imageSrc, name, house } = props;

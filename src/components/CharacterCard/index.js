@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.scss";
+import PropTypes from "prop-types";
 
 function CharacterCard(props) {
     const { imageSrc, name, house } = props;
@@ -11,5 +12,11 @@ function CharacterCard(props) {
     </div>
   );
 }
+
+CharacterCard.propTypes = {
+  name: PropTypes.string,
+  imageSrc: PropTypes.string,
+  house: PropTypes.string,
+};
 
 export default CharacterCard;

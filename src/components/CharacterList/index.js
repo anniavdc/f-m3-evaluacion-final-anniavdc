@@ -2,6 +2,7 @@ import React from "react";
 import CharacterCard from "../CharacterCard";
 import { Link } from "react-router-dom";
 import "./styles.scss";
+import PropTypes from "prop-types";
 
 function CharacterList(props) {
   const { characters, value } = props;
@@ -23,5 +24,12 @@ function CharacterList(props) {
     </ul>
   );
 }
+
+CharacterList.propTypes = {
+  name: PropTypes.string,
+  imageSrc: PropTypes.string,
+  house: PropTypes.string,
+  id: PropTypes.number,
+};
 
 export default CharacterList;

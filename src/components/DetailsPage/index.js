@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import howarts from "../../images/howarts.png";
 import "./styles.scss";
+import PropTypes from "prop-types";
 
 function DetailsPage(props) {
   const { characters, loading } = props;
@@ -17,7 +18,7 @@ function DetailsPage(props) {
   const status = person.alive ? (
     " ALIVE"
   ) : (
-    <i class="fas fa-skull-crossbones" />
+    <i className="fas fa-skull-crossbones" />
   );
   const year =
     person.yearOfBirth === "" ? "" : `Year of birth: ${person.yearOfBirth}`;
@@ -44,7 +45,7 @@ function DetailsPage(props) {
           </div>
           <Link to="/" className="DetailsPage__link">
             <p>
-              <i class="fas fa-reply" /> Back
+              <i className="fas fa-reply" /> Back
             </p>
           </Link>
         </div>
@@ -52,5 +53,10 @@ function DetailsPage(props) {
     </div>
   );
 }
+
+DetailsPage.propTypes = {
+  id: PropTypes.number,
+  characters: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default DetailsPage;

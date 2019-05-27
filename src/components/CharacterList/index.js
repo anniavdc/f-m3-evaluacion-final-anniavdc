@@ -9,9 +9,15 @@ function CharacterList(props) {
   return (
     <ul className="CharacterList__container">
       {characters
-        .filter(person => person.name.toLowerCase().includes(value.toLowerCase()))
-        .map((person) => (
-          <Link to= {`/character/${person.id}`} className="CharacterList__link" key={person.id}>
+        .filter(person =>
+          person.name.toLowerCase().includes(value.toLowerCase())
+        )
+        .map(person => (
+          <Link
+            to={`/character/${person.id}`}
+            className="CharacterList__link"
+            key={person.id}
+          >
             <li className="CharacterList__item">
               <CharacterCard
                 name={person.name}
@@ -29,7 +35,7 @@ CharacterList.propTypes = {
   name: PropTypes.string,
   imageSrc: PropTypes.string,
   house: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.number
 };
 
 export default CharacterList;

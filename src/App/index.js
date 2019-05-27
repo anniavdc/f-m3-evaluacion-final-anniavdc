@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "../components/HomePage";
-import DetailsPage from "../components/DetailsPage"
+import DetailsPage from "../components/DetailsPage";
 
 class App extends React.Component {
   constructor(props) {
@@ -9,33 +9,33 @@ class App extends React.Component {
     this.state = {
       characters: [],
       inputValue: "",
-      loading: true,
+      loading: true
     };
-    this.handleInputChange=this.handleInputChange.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
-  componentDidMount(){
+  componentDidMount() {
     this.getCharacters();
   }
 
   getCharacters() {
     const ENDPOINT = "https://hp-api.herokuapp.com/api/characters";
 
-    fetch(ENDPOINT)
-    .then(response => response.json()
-    .then(data => {
-      this.setState({
-        loading: false,
-        characters: data.map((person, index) => {
-          return {...person, id: index + 1}
-        }),
+    fetch(ENDPOINT).then(response =>
+      response.json().then(data => {
+        this.setState({
+          loading: false,
+          characters: data.map((person, index) => {
+            return { ...person, id: index + 1 };
+          })
+        });
       })
-    }));
+    );
   }
-  handleInputChange(event){
+  handleInputChange(event) {
     const inputValue = event.target.value;
     this.setState({
       inputValue: inputValue
-    })
+    });
   }
   render() {
     if (this.state.loading) {
@@ -45,10 +45,28 @@ class App extends React.Component {
     return (
       <div className="App__container">
         <Switch>
-          <Route exact path="/" render={routerProps=>(<HomePage match={routerProps.match} characters={characters} value={inputValue}
-          handleInputChange={this.handleInputChange}/>)} />
-          <Route path="/character/:id" render={routerProps=>(
-            <DetailsPage match={routerProps.match} characters={characters} loading={loading}/>)}/>
+          <Route
+            exact
+            path="/"
+            render={routerProps => (
+              <HomePage
+                match={routerProps.match}
+                characters={characters}
+                value={inputValue}
+                handleInputChange={this.handleInputChange}
+              />
+            )}
+          />
+          <Route
+            path="/character/:id"
+            render={routerProps => (
+              <DetailsPage
+                match={routerProps.match}
+                characters={characters}
+                loading={loading}
+              />
+            )}
+          />
         </Switch>
       </div>
     );

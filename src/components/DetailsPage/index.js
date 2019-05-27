@@ -5,7 +5,7 @@ import "./styles.scss";
 import PropTypes from "prop-types";
 
 function DetailsPage(props) {
-  const { characters, loading } = props;
+  const { characters } = props;
   const { id } = props.match.params;
 
   const person = characters.find(person => {
@@ -53,7 +53,7 @@ function DetailsPage(props) {
 
 DetailsPage.propTypes = {
   id: PropTypes.number,
-  characters: PropTypes.arrayOf(PropTypes.object),
+  characters: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default DetailsPage;

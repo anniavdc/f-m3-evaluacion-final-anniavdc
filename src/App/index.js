@@ -38,6 +38,9 @@ class App extends React.Component {
     })
   }
   render() {
+    if (this.state.loading) {
+      return <p>Loading...</p>;
+    }
     const { characters, inputValue, loading } = this.state;
     return (
       <div className="App__container">

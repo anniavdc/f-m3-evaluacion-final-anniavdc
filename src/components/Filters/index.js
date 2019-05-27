@@ -1,5 +1,6 @@
 import React from 'react';
-import "./styles.scss"
+import "./styles.scss";
+import PropTypes from "prop-types";
 
 function Filters(props) {
     return (
@@ -9,5 +10,10 @@ function Filters(props) {
       </div>
     );
   }
+  
+Filters.propTypes = {
+    value: PropTypes.string,
+    handleInputChange: PropTypes.func,
+  };
   
   export default Filters;

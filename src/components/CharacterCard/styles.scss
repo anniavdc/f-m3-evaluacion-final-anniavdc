@@ -1,17 +1,17 @@
 @import "../../stylesheets/core/variables";
 
 .CharacterCard__container{
-    height: 400px;
-    width: 250px;
+    height: 350px;
+    width: 200px;
     background-color: $color-secondary-600;
     border: 1px solid $color-primary-600;
     color: $color-primary-0;
     text-align: center;
 }
 .CharacterCard__image{
-    height: 300px;
+    height: 260px;
     background-size: cover;
 }
 .CharacterCard__title{
-    font-size: 1.25rem;
+    font-size: 1.125rem;
 }

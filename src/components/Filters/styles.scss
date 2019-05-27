@@ -8,6 +8,10 @@
     align-items: center;
     font-size: 1.125rem;
 }
+.Filters__label-text{
+    color: $color-primary-200;
+    text-shadow: 3px 3px $color-primary-1000;
+}
 .Filters__input-text{
     padding: 5px 80px;
     border: 1px solid $color-secondary-600;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import howarts from "../../images/howarts.png";
+import howarts from "../../images/background5.jpg";
 import "./styles.scss";
 import PropTypes from "prop-types";
 
@@ -12,9 +12,6 @@ function DetailsPage(props) {
     return person.id === parseInt(id);
   });
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
   const status = person.alive ? (
     " ALIVE"
   ) : (

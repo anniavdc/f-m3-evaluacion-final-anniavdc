@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project presented as final evaluation for the ReactJS module in Adalab.
+
+Starting: 
+Clone or fork the repository and install all the dependencies with npm install.
+
+This project was created with create-react-app so you can run the following commands: 
 
 ## Available Scripts
 

@@ -15,8 +15,15 @@ function Homepage(props) {
       <Filters
         value={props.value}
         handleInputChange={props.handleInputChange}
+        handleInputCheckboxChange={props.handleInputCheckboxChange}
+        handleInputRadioChange={props.handleInputRadioChange}
+
       />
-      <CharacterList characters={props.characters} value={props.value} />
+      <CharacterList 
+      characters={props.characters} 
+      value={props.value} 
+      valueCheckbox={props.valueChekbox}
+      valueRadio={props.valueRadio} />
     </div>
   );
 }

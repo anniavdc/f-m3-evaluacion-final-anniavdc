@@ -9,9 +9,16 @@ class App extends React.Component {
     this.state = {
       characters: [],
       inputValue: "",
-      loading: true
+      loading: true,
+      filters:{
+        house:[],
+        status:"",
+        alive: true,
+      },
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInputCheckboxChange=this.handleInputCheckboxChange.bind(this);
+    this.handleInputRadioChange=this.handleInputRadioChange.bind(this);
   }
   componentDidMount() {
     this.getCharacters();
@@ -34,8 +41,35 @@ class App extends React.Component {
   handleInputChange(event) {
     const inputValue = event.target.value;
     this.setState({
-      inputValue: inputValue
+      inputValue: inputValue,
     });
+  }
+  handleInputCheckboxChange(event) {
+    const inputValue = event.target.value;
+    const inputHouse = event.target.checked;
+    this.setState((prevState)=>{
+      if(inputHouse){
+        return {filters:{
+          ...prevState.filters, house: prevState.filters.house.concat(inputValue)
+        }}
+      }else{
+        return {filters:{
+          ...prevState.filters, house: prevState.filters.house.filter(item => item !== inputValue)
+        }}
+      }
+    });
+  }
+  handleInputRadioChange(event){
+    const inputValue=event.target.value;
+    const inputStatus=event.target.checked;
+    this.setState((prevState)=>{
+      if(inputStatus){
+        return {filters:{
+          ...prevState.filters, status: inputValue
+        }}
+      }
+    })
+  
   }
   render() {
     if (this.state.loading) {
@@ -54,6 +88,10 @@ class App extends React.Component {
                 characters={characters}
                 value={inputValue}
                 handleInputChange={this.handleInputChange}
+                valueChekbox={this.state.filters.house}
+                handleInputCheckboxChange={this.handleInputCheckboxChange}
+                valueRadio={this.state.filters.status}
+                handleInputRadioChange={this.handleInputRadioChange}
               />
             )}
           />

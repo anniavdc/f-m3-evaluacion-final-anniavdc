@@ -7,9 +7,9 @@
     flex-direction: column;
     align-items: center;
     font-size: 1.125rem;
+    color: $color-primary-200;
 }
 .Filters__label-text{
-    color: $color-primary-200;
     text-shadow: 3px 3px $color-primary-1000;
 }
 .Filters__input-text{

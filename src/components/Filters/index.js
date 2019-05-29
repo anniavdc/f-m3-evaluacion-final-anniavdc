@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.scss";
 import PropTypes from "prop-types";
+import Input from "../Input";
 
 function Filters(props) {
   return (
@@ -14,6 +15,14 @@ function Filters(props) {
         id="name"
         value={props.value}
         onChange={props.handleInputChange}
+      />
+      <Input
+        label="Search by house: "
+        type="text"
+        name="house"
+        id="house"
+        handleInputHouse={props.handleInputHouse}
+        houseValue={props.houseValue}
       />
     </div>
   );

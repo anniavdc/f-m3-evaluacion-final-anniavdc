@@ -5,13 +5,15 @@ import "./styles.scss";
 import PropTypes from "prop-types";
 
 function CharacterList(props) {
-  const { characters, value } = props;
+  const { characters, value, houseValue } = props;
+ 
   return (
     <ul className="CharacterList__container">
       {characters
         .filter(person =>
           person.name.toLowerCase().includes(value.toLowerCase())
         )
+        .filter(person => person.house.toLowerCase().includes(houseValue.toLowerCase()))
         .map(person => (
           <Link
             to={`/character/${person.id}`}

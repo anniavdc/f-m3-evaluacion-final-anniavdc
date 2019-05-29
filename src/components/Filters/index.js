@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.scss";
 import PropTypes from "prop-types";
 import Input from "../Input";
+import InputSelect from "../InputSelect";
 
 function Filters(props) {
   return (
@@ -22,6 +23,12 @@ function Filters(props) {
         id="house"
         handleInputNumber={props.handleInputNumber}
         value={props.inputNumber}
+      />
+      <InputSelect
+        label="Status"
+        value={props.status}
+        handleInputSelect={props.handleInputSelect}
+        inputStatus={props.inputStatus}
       />
     </div>
   );

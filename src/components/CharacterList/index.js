@@ -5,16 +5,17 @@ import "./styles.scss";
 import PropTypes from "prop-types";
 
 function CharacterList(props) {
-  const { characters, value, inputNumber } = props;
-  
+  const { characters, value, inputNumber, inputStatus } = props;
+  const status = inputStatus === "true"? true: false;
   return (
     <ul className="CharacterList__container">
       {characters
         .filter(person =>
           person.name.toLowerCase().includes(value.toLowerCase())
         )
-        // .filter(person => person.yearOfBirth.toString().includes(inputNumber))
-        .filter(person => inputNumber? person.yearOfBirth >= parseInt(inputNumber): true)
+        .filter(person => inputNumber? person.wand.length <= parseFloat(inputNumber): true)
+        // .filter(person => inputNumber? person.yearOfBirth >= parseInt(inputNumber): true)
+        .filter(person => inputStatus?person.alive === status : person)
         .map(person => (
           <Link
             to={`/character/${person.id}`}

@@ -17,11 +17,14 @@ function Homepage(props) {
         handleInputChange={props.handleInputChange}
         handleInputNumber={props.handleInputNumber}
         inputNumber={props.inputNumber}
+        handleInputSelect={props.handleInputSelect}
+        inputStatus={props.inputStatus}
       />
       <CharacterList 
       characters={props.characters} 
       value={props.value}
       inputNumber={props.inputNumber}
+      inputStatus={props.inputStatus}
        />
     </div>
   );

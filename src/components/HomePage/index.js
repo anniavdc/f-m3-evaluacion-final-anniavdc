@@ -15,8 +15,14 @@ function Homepage(props) {
       <Filters
         value={props.value}
         handleInputChange={props.handleInputChange}
+        handleInputNumber={props.handleInputNumber}
+        inputNumber={props.inputNumber}
       />
-      <CharacterList characters={props.characters} value={props.value} />
+      <CharacterList 
+      characters={props.characters} 
+      value={props.value}
+      inputNumber={props.inputNumber}
+       />
     </div>
   );
 }

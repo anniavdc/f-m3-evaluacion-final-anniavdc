@@ -5,13 +5,16 @@ import "./styles.scss";
 import PropTypes from "prop-types";
 
 function CharacterList(props) {
-  const { characters, value } = props;
+  const { characters, value, inputNumber } = props;
+  
   return (
     <ul className="CharacterList__container">
       {characters
         .filter(person =>
           person.name.toLowerCase().includes(value.toLowerCase())
         )
+        // .filter(person => person.yearOfBirth.toString().includes(inputNumber))
+        .filter(person => inputNumber? person.yearOfBirth >= parseInt(inputNumber): true)
         .map(person => (
           <Link
             to={`/character/${person.id}`}

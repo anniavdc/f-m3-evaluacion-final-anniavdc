@@ -9,9 +9,11 @@ class App extends React.Component {
     this.state = {
       characters: [],
       inputValue: "",
-      loading: true
+      loading: true,
+      inputNumber: "",
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInputNumber = this.handleInputNumber.bind(this);
   }
   componentDidMount() {
     this.getCharacters();
@@ -37,11 +39,17 @@ class App extends React.Component {
       inputValue: inputValue
     });
   }
+  handleInputNumber(event){
+    const inputValue = event.target.value;
+    this.setState({
+      inputNumber: inputValue
+    })
+  }
   render() {
     if (this.state.loading) {
       return <p>Loading...</p>;
     }
-    const { characters, inputValue, loading } = this.state;
+    const { characters, inputValue, loading, inputNumber } = this.state;
     return (
       <div className="App__container">
         <Switch>
@@ -54,6 +62,8 @@ class App extends React.Component {
                 characters={characters}
                 value={inputValue}
                 handleInputChange={this.handleInputChange}
+                handleInputNumber={this.handleInputNumber}
+                inputNumber={inputNumber}
               />
             )}
           />
